@@ -1,10 +1,11 @@
+import os
 from flask import Flask, request
 import requests
 
 app = Flask(__name__)
 
-TOKEN = "TU_TOKEN_NUEVO_AQUÍ" # El nuevo que regeneraste
-PHONE_ID = "1421015734426375"
+TOKEN = os.getenv("TOKEN")
+PHONE_ID = os.getenv("PHONE_ID")
 VERIFY_TOKEN = "invader123"
 
 def enviar_mensaje(to, texto):
